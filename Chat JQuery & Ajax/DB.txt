@@ -1,0 +1,31 @@
+CREATE TABLE `chat` (
+  `chatid` INT(11) NOT NULL AUTO_INCREMENT,
+  `chat_sala_id` INT(11) NOT NULL,
+  `chat_msg` VARCHAR(100) NOT NULL,
+  `userid` INT(11) NOT NULL,
+  `chat_fecha` datetime NOT NULL,
+PRIMARY KEY(`chatid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `chat_sala` (
+  `chat_sala_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `chat_sala_nombre` VARCHAR(50) NOT NULL,
+PRIMARY KEY(`chat_sala_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `usuario` (
+  `usuarioid` INT(11) NOT NULL AUTO_INCREMENT,
+  `usuario` VARCHAR(30) NOT NULL,
+  `contrasena` VARCHAR(30) NOT NULL,
+  `tu_nombre` VARCHAR(60) NOT NULL,
+PRIMARY KEY(`usuarioid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-----------------------------------------
+
+INSERT INTO `chat_sala` (`chat_sala_nombre`) VALUES
+('Simple Sala Chat');
+
+INSERT INTO `usuario` (`usuario`, `contrasena`, `tu_nombre`) VALUES
+('simon', 'duque', 'Simon'),
+('paco', '123', 'Paco');
